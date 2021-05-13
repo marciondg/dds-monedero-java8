@@ -18,15 +18,25 @@ Tenés seis tareas:
  4. :rescue_worker_helmet: Corregí smells, de a un commit por vez. 
  5. :arrow_up: Subí todos los cambios a tu _fork_
 
-### Tecnologías usadas
+### Code Smells encontrados:
 
-* Java 8.
-* JUnit 5. :warning: La versión 5 de JUnit es la más nueva del framework y presenta algunas diferencias respecto a la versión "clásica" (JUnit 4). Para mayores detalles, ver:
-    *  [Apunte de herramientas](https://docs.google.com/document/d/1VYBey56M0UU6C0689hAClAvF9ILE6E7nKIuOqrRJnWQ/edit#heading=h.dnwhvummp994)
-    *  [Entrada de Blog (en inglés)](https://www.baeldung.com/junit-5-migration)
-    *  [Entrada de Blog (en español)](https://www.paradigmadigital.com/dev/nos-espera-junit-5/)
-* Maven 3.3 o superior
- 
+- Duplicated Code: Código duplicado en métodos de la misma clase.
+```    
+Cuenta.java:32 :42
+  if (cuanto <= 0) {
+  throw new MontoNegativoException(cuanto + ": el monto a ingresar debe ser un valor positivo");
+  }
+```
+
+- Long Parameter List: Se puede pasar directamente el Movimiento directamente como parámetro
+```
+Cuenta.java:57
+  public void agregarMovimiento(LocalDate fecha, double cuanto, boolean esDeposito) {
+    Movimiento movimiento = new Movimiento(fecha, cuanto, esDeposito);
+    movimientos.add(movimiento);
+  }
+```
+
 
   
 
