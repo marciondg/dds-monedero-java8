@@ -18,7 +18,7 @@ Tenés seis tareas:
  4. :rescue_worker_helmet: Corregí smells, de a un commit por vez. 
  5. :arrow_up: Subí todos los cambios a tu _fork_
 
-### Code Smells encontrados:
+### Code Smells encontrados
 
 - Duplicated Code: Código duplicado en métodos de la misma clase.
 ```    
